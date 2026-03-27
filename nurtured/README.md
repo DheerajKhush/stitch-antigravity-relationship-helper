@@ -1,73 +1,112 @@
-# React + TypeScript + Vite
+# Nurtured 🌱
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Nurtured** is a modern, responsive web application designed as a relationship companion. It features an interactive, therapist-sourced onboarding journey that assesses relationship dynamics using personalized, gender-aware questionnaires.
 
-Currently, two official plugins are available:
+Designed with a premium aesthetic, Nurtured utilizes glassmorphism, fluid animations, and lush gradient palettes to provide a calming and insightful user experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🎨 Features
+- **Therapist-Sourced Onboarding Flow**: 10 carefully curated questions analyzing communication, connection, intimacy, and trust.
+- **Premium UI/UX**: Built with modern design principles (glassmorphism panels, deep soft shadows, and dynamic gradient text).
+- **Fully Responsive**: Flawless experience across desktop, tablet, and mobile devices.
+- **Micro-interactions**: Subtle hover states, animated SVG loaders, and staggered fade-ups make the app feel alive.
+- **State Management**: Built-in state handling for the onboarding flow utilizing robust React context/hooks.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Built With
+- **[React 19](https://react.dev/)**: Fast, modern frontend library.
+- **[Vite 6](https://vite.dev/)**: Next-generation frontend tooling for rapid development.
+- **[Tailwind CSS v4](https://tailwindcss.com/)**: Utility-first CSS framework configured with the modern CSS-first `@theme` block.
+- **[TypeScript](https://www.typescriptlang.org/)**: Strongly typed programming for better developer experience and reliability.
+- **[Lucide React](https://lucide.dev/)**: Beautiful, consistent icon pack.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Follow these steps to set up the project locally.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) installed (v18+ recommended).
+
+### Installation
+
+1. **Clone the repository** (if you haven't already):
+   ```bash
+   git clone <repository-url>
+   cd nurtured
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**:
+   Navigate to `http://localhost:5173` (or the port Vite outputs in your terminal) to view the application in action.
+
+---
+
+## 📂 Project Structure
+
+```text
+nurtured/
+├── public/                 # Static assets
+├── src/
+│   ├── common/             # Global types and store (e.g., store.tsx, types.ts)
+│   ├── components/         # Reusable UI elements (icons, loaders, etc.)
+│   ├── data/               # Static data (e.g., therapist-sourced onboarding questions)
+│   ├── pages/
+│   │   └── onboarding/     # Core onboarding views
+│   │       ├── steps/      # Individual steps (Welcome, Gender, Intro, Question, Personalizing)
+│   │       └── OnboardingFlow.tsx
+│   ├── App.tsx             # Main routing component
+│   ├── index.css           # Global styles and Tailwind v4 theme definitions
+│   └── main.tsx            # React application entry point
+├── package.json            # Project dependencies and operational scripts
+├── tailwind.config.js      # CSS Framework configuration
+├── vite.config.ts          # Vite configuration
+└── tsconfig.json           # TypeScript compilation settings
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 💅 Styling & Animations
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The project relies on a custom Tailwind v4 configuration injected directly into `src/index.css`. 
+Key global utility classes include:
+- `.glass-panel`: Frosted glass blur effects.
+- `.gradient-text`: Fluid, colored text overlays.
+- `.premium-shadow`: Soft, layered shadows for depth.
+- `.onboard-fade-up`: Reusable staggered fade animation applied to typography and cards.
+
+---
+
+## 📜 Scripts
+
+| Command | Description |
+| :--- | :--- |
+| `npm run dev` | Starts the Vite development server with Hot Module Replacement (HMR). |
+| `npm run build` | Compiles TypeScript and builds the app for production. |
+| `npm run preview` | Starts a local web server to serve the production build. |
+| `npm run lint` | Runs ESLint across the codebase. |
+
+---
+
+## 🤝 Contributing
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+*Designed and engineered to bring couples closer.*
