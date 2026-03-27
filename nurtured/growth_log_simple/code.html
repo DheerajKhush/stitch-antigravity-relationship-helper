@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Growth Log - Sanctuary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-dim": "#40584f",
+              "on-tertiary": "#edfbff",
+              "on-background": "#2b3530",
+              "on-error": "#fff7f6",
+              "surface-container-high": "#e1eae4",
+              "inverse-surface": "#0b0f0d",
+              "error-container": "#fa746f",
+              "on-secondary-fixed": "#2d443b",
+              "on-primary-fixed-variant": "#466156",
+              "inverse-on-surface": "#999e9a",
+              "on-surface": "#2b3530",
+              "on-primary-fixed": "#2a443b",
+              "secondary-fixed-dim": "#c0dace",
+              "primary-container": "#cbe9db",
+              "on-error-container": "#6e0a12",
+              "tertiary-dim": "#205a65",
+              "surface-bright": "#f6faf6",
+              "on-tertiary-fixed-variant": "#2c656f",
+              "background": "#f6faf6",
+              "outline-variant": "#aab4ae",
+              "surface-container": "#e8f0ea",
+              "inverse-primary": "#d7f5e7",
+              "on-secondary-container": "#3f574d",
+              "on-tertiary-container": "#205b65",
+              "tertiary-fixed": "#b7effb",
+              "secondary-fixed": "#cee9dc",
+              "primary-fixed-dim": "#bedbce",
+              "on-primary": "#e5fff2",
+              "outline": "#737d78",
+              "surface-container-highest": "#dae5de",
+              "tertiary": "#2e6771",
+              "secondary-container": "#cee9dc",
+              "on-surface-variant": "#57615c",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-container": "#3d574d",
+              "on-secondary": "#e5fff2",
+              "secondary": "#4c645a",
+              "primary-dim": "#3e594e",
+              "primary": "#4a655a",
+              "surface-dim": "#d2ddd6",
+              "primary-fixed": "#cbe9db",
+              "surface-tint": "#4a655a",
+              "on-secondary-fixed-variant": "#496057",
+              "error": "#a83836",
+              "surface": "#f6faf6",
+              "tertiary-container": "#b7effb",
+              "error-dim": "#67040d",
+              "surface-container-low": "#eff5f0",
+              "surface-variant": "#dae5de",
+              "on-tertiary-fixed": "#034852",
+              "tertiary-fixed-dim": "#a9e0ec"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 40px 80px -20px rgba(43, 53, 48, 0.04);
+        }
+        .glass-header {
+            background: rgba(246, 250, 246, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container">
+<!-- Top Navigation -->
+<header class="w-full top-0 sticky z-40 bg-[#eff5f0] transition-colors duration-300">
+<div class="flex items-center justify-between px-6 md:px-12 py-6 w-full max-w-screen-2xl mx-auto">
+<h1 class="font-headline font-bold text-[#4a655a] text-2xl tracking-tight">Sanctuary</h1>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-[#2b3530]/60 font-medium hover:text-[#4a655a] transition-all" href="#">Dashboard</a>
+<a class="text-[#2b3530]/60 font-medium hover:text-[#4a655a] transition-all" href="#">Dates</a>
+<a class="text-[#4a655a] font-semibold" href="#">Journal</a>
+<a class="text-[#2b3530]/60 font-medium hover:text-[#4a655a] transition-all" href="#">Settings</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#4a655a] p-2 hover:bg-[#ffffff]/50 rounded-full transition-all active:scale-95">menu</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close-up portrait of a woman with a gentle smile in soft natural morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnbQCqGK18NjV2lOZZZB82deHB_AZx822WAS-5tYt6k1g-Y-3iTeF9aXE9XydifJSBa8ISNp3bdif9jjuDJO91ZZk_cZZ1z-7tdCVpcukJ7TEq9hs6K1sww4oyq2vbcf-CvOO39oI5qiHY8kgg_zvR2Biordp7_WoWutcmNPTbz0UREDpAni_7fyr_F59YjOnb02mQ_DhWQT192B9rwEGgdNNOKDt67JOeCpTk3mApANPzDsbB1flF_qPAoPaXTz3PPkeSYWdc4xKw"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-screen-xl mx-auto px-6 md:px-12 pt-12 pb-32">
+<!-- Hero Section -->
+<section class="mb-16 md:mb-24">
+<div class="max-w-2xl">
+<span class="font-label text-on-surface-variant tracking-[0.2em] uppercase text-[0.65rem] mb-4 block">Personal Growth Journal</span>
+<h2 class="font-headline text-[2.75rem] md:text-[3.5rem] tracking-tight leading-[1.1] text-on-surface font-extrabold mb-6">
+                    Our Shared <span class="text-primary italic font-medium">Moments.</span>
+</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed font-light">
+                    A quiet space to reflect on the small gestures, significant milestones, and the everyday beauty of growing together.
+                </p>
+</div>
+</section>
+<!-- Timeline Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-y-16 md:gap-x-12">
+<!-- Timeline Item 1: Note -->
+<div class="md:col-start-2 md:col-span-10 lg:col-start-3 lg:col-span-8 flex flex-col md:flex-row gap-8 items-start">
+<div class="flex flex-col items-center pt-2">
+<span class="font-headline font-bold text-primary text-xl">14</span>
+<span class="font-label text-on-surface-variant text-xs uppercase tracking-widest">Oct</span>
+</div>
+<div class="flex-1 bg-surface-container-low p-8 md:p-12 rounded-[2rem] editorial-shadow">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary text-sm" data-weight="fill">favorite</span>
+<span class="font-label text-primary font-semibold text-xs tracking-wider uppercase">Appreciation Note</span>
+</div>
+<blockquote class="font-body text-xl md:text-2xl text-on-surface leading-relaxed italic mb-6">
+                        "Thank you for the way you made coffee this morning without me asking. It's the small acts of service that make me feel so seen."
+                    </blockquote>
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 rounded-full bg-secondary-container"></div>
+<span class="text-on-surface-variant text-sm font-medium">Shared by Sarah</span>
+</div>
+</div>
+</div>
+<!-- Timeline Item 2: Photo Card -->
+<div class="md:col-start-1 md:col-span-11 lg:col-start-2 lg:col-span-9 flex flex-col md:flex-row-reverse gap-8 items-start">
+<div class="flex flex-col items-center pt-2">
+<span class="font-headline font-bold text-primary text-xl">12</span>
+<span class="font-label text-on-surface-variant text-xs uppercase tracking-widest">Oct</span>
+</div>
+<div class="flex-1 w-full">
+<div class="rounded-[3rem] overflow-hidden aspect-[16/10] relative group cursor-pointer editorial-shadow">
+<img alt="Coastal Walk" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Atmospheric wide shot of a couple walking along a misty coastal cliff at dusk with soft ocean waves below" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkiiJM3c3OhOIeYxvVsUv540O9XUlbR-_YjGEB1eAmyXHOjySUyMtgdPAzMJarXrFB6AfhSO2MjuV5hCF1xghRGT7RIjEhvDBFKQ25Yd9uhlkWWYRcXpCEjy7sgQ79RISPbAROtMzGrbWmxKdGXxwwYhi3FqEKcGbTJaeQXPqib42HzurOogpg3uj1t7s00vyUk3IcjSr6ilmCmMi2pR7KkHPyHeRtu2S5_c2C3z5z454QkdAKo2KGwyzAgPSeHzWCkx88l4ncTBkR"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex flex-col justify-end p-8 md:p-12">
+<h3 class="font-headline text-white text-2xl font-semibold mb-2">Our favorite sunset spot</h3>
+<p class="text-white/80 font-body text-sm">Wildflower cliffs, October 12th</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Timeline Item 3: Milestone -->
+<div class="md:col-start-2 md:col-span-10 lg:col-start-4 lg:col-span-6 flex flex-col md:flex-row gap-8 items-start">
+<div class="flex flex-col items-center pt-2">
+<span class="font-headline font-bold text-primary text-xl">08</span>
+<span class="font-label text-on-surface-variant text-xs uppercase tracking-widest">Oct</span>
+</div>
+<div class="flex-1 bg-surface-container-highest/40 p-10 rounded-[2.5rem] border border-outline-variant/10">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-tertiary" data-weight="fill">verified</span>
+<span class="font-label text-on-surface-variant font-semibold text-xs tracking-wider uppercase">Growth Milestone</span>
+</div>
+<h4 class="font-headline text-2xl text-on-surface font-bold mb-4">Navigating the big move</h4>
+<p class="text-on-surface-variant leading-relaxed">
+                        We talked through the logistics of the move today. It was the first time we both felt truly heard during a stressful conversation. We're getting better at this.
+                    </p>
+<div class="mt-8 pt-6 border-t border-outline-variant/10 flex justify-between items-center">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-background bg-secondary-fixed"></div>
+<div class="w-8 h-8 rounded-full border-2 border-background bg-primary-fixed"></div>
+</div>
+<span class="text-xs font-label text-on-surface-variant">Reflection Completed</span>
+</div>
+</div>
+</div>
+<!-- Timeline Item 4: Simple Note -->
+<div class="md:col-start-3 md:col-span-8 lg:col-start-5 lg:col-span-5 flex flex-col md:flex-row gap-8 items-start">
+<div class="flex flex-col items-center pt-2">
+<span class="font-headline font-bold text-primary text-xl">05</span>
+<span class="font-label text-on-surface-variant text-xs uppercase tracking-widest">Oct</span>
+</div>
+<div class="flex-1 bg-white p-8 rounded-3xl editorial-shadow">
+<p class="text-on-surface italic text-lg leading-relaxed">
+                        "The way you handled that call with your mom was so patient. I'm learning a lot from you."
+                    </p>
+</div>
+</div>
+</div>
+<!-- Add Moment Section (Alternative to FAB for clean UI) -->
+<section class="mt-24 text-center">
+<button class="group inline-flex items-center gap-4 bg-primary text-on-primary px-8 py-4 rounded-full font-headline font-semibold transition-all hover:pr-10 active:scale-95 shadow-xl shadow-primary/20">
+<span class="material-symbols-outlined">add</span>
+                Add a new moment
+            </button>
+</section>
+</main>
+<!-- Floating Action Button (Mobile Only) -->
+<div class="md:hidden fixed bottom-24 right-6 z-50">
+<button class="w-16 h-16 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-2xl active:scale-90 transition-all">
+<span class="material-symbols-outlined text-3xl" data-weight="fill">add</span>
+</button>
+</div>
+<!-- Bottom Navigation Bar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-8 pb-8 pt-4 bg-[#ffffff]/60 backdrop-blur-xl border-t border-[#2b3530]/10 rounded-t-[2rem] z-50 shadow-[0_-4px_40px_rgba(43,53,48,0.04)]">
+<a class="flex flex-col items-center justify-center text-[#2b3530]/60 px-6 py-2 transition-all hover:text-[#4a655a]" href="#">
+<span class="material-symbols-outlined mb-1">dashboard</span>
+<span class="font-['Manrope'] text-[0.75rem] font-medium tracking-wide">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#2b3530]/60 px-6 py-2 transition-all hover:text-[#4a655a]" href="#">
+<span class="material-symbols-outlined mb-1">calendar_today</span>
+<span class="font-['Manrope'] text-[0.75rem] font-medium tracking-wide">Dates</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#cbe9db] text-[#2b3530] rounded-full px-6 py-2 transition-all" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<span class="font-['Manrope'] text-[0.75rem] font-medium tracking-wide">Journal</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#2b3530]/60 px-6 py-2 transition-all hover:text-[#4a655a]" href="#">
+<span class="material-symbols-outlined mb-1">settings</span>
+<span class="font-['Manrope'] text-[0.75rem] font-medium tracking-wide">Settings</span>
+</a>
+</nav>
+</body></html>

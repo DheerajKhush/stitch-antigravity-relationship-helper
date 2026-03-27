@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Date Lab - Sanctuary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "secondary-dim": "#40584f",
+                "on-tertiary": "#edfbff",
+                "on-background": "#2b3530",
+                "on-error": "#fff7f6",
+                "surface-container-high": "#e1eae4",
+                "inverse-surface": "#0b0f0d",
+                "error-container": "#fa746f",
+                "on-secondary-fixed": "#2d443b",
+                "on-primary-fixed-variant": "#466156",
+                "inverse-on-surface": "#999e9a",
+                "on-surface": "#2b3530",
+                "on-primary-fixed": "#2a443b",
+                "secondary-fixed-dim": "#c0dace",
+                "primary-container": "#cbe9db",
+                "on-error-container": "#6e0a12",
+                "tertiary-dim": "#205a65",
+                "surface-bright": "#f6faf6",
+                "on-tertiary-fixed-variant": "#2c656f",
+                "background": "#f6faf6",
+                "outline-variant": "#aab4ae",
+                "surface-container": "#e8f0ea",
+                "inverse-primary": "#d7f5e7",
+                "on-secondary-container": "#3f574d",
+                "on-tertiary-container": "#205b65",
+                "tertiary-fixed": "#b7effb",
+                "secondary-fixed": "#cee9dc",
+                "primary-fixed-dim": "#bedbce",
+                "on-primary": "#e5fff2",
+                "outline": "#737d78",
+                "surface-container-highest": "#dae5de",
+                "tertiary": "#2e6771",
+                "secondary-container": "#cee9dc",
+                "on-surface-variant": "#57615c",
+                "surface-container-lowest": "#ffffff",
+                "on-primary-container": "#3d574d",
+                "on-secondary": "#e5fff2",
+                "secondary": "#4c645a",
+                "primary-dim": "#3e594e",
+                "primary": "#4a655a",
+                "surface-dim": "#d2ddd6",
+                "primary-fixed": "#cbe9db",
+                "surface-tint": "#4a655a",
+                "on-secondary-fixed-variant": "#496057",
+                "error": "#a83836",
+                "surface": "#f6faf6",
+                "tertiary-container": "#b7effb",
+                "error-dim": "#67040d",
+                "surface-container-low": "#eff5f0",
+                "surface-variant": "#dae5de",
+                "on-tertiary-fixed": "#034852",
+                "tertiary-fixed-dim": "#a9e0ec"
+              },
+              fontFamily: {
+                "headline": ["Plus Jakarta Sans"],
+                "body": ["Manrope"],
+                "label": ["Manrope"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .headline-font {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- Top Navigation Anchor -->
+<header class="w-full top-0 sticky z-50 bg-[#eff5f0] dark:bg-[#232623] transition-colors duration-300">
+<div class="flex items-center justify-between px-12 py-6 w-full max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="text-[#4a655a] dark:text-[#cbe9db] active:scale-95 duration-200 ease-in-out hover:bg-[#ffffff]/50 rounded-full p-2">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-['Plus_Jakarta_Sans'] font-bold text-[#4a655a] dark:text-emerald-400 text-2xl tracking-tight">Sanctuary</h1>
+</div>
+<div class="flex items-center gap-8">
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-[#2b3530] dark:text-emerald-100/60 font-medium hover:text-[#4a655a] transition-all" href="#">Dashboard</a>
+<a class="text-[#4a655a] dark:text-emerald-400 font-semibold" href="#">Dates</a>
+<a class="text-[#2b3530] dark:text-emerald-100/60 font-medium hover:text-[#4a655a] transition-all" href="#">Journal</a>
+<a class="text-[#2b3530] dark:text-emerald-100/60 font-medium hover:text-[#4a655a] transition-all" href="#">Settings</a>
+</nav>
+<div class="w-10 h-10 rounded-full bg-primary-container overflow-hidden ring-2 ring-primary/10">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="close-up portrait of a woman with a gentle smile in soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhqWkW9GGPTUnLt7ufm95PiJtjj_F6jwBU4dvO2MKJHEtYcp-NgI5rHieEezCI8c_p5EDiYKyZri1OAdHmfPdE69g578mroqZzH0O9OV2_F6RYLr0YLtZ8_Ot7-ote7Yh_DSCCiX3LMf7pkxFbEQE78bTIN49qts6M_x_KrCukVBDRi0bRfsPH-Auz8qTHCzfZjHI_sQ_qarLRjBpUO834MtTqsU6ueBTm-tscPOaq8k539O8VoAXiKeYYgGS4ReizGQzbWPx66OW6"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-screen-2xl mx-auto px-6 md:px-12 pt-16">
+<!-- Hero Section -->
+<section class="mb-16">
+<div class="max-w-3xl">
+<h2 class="font-headline text-[2.75rem] font-extrabold tracking-tight leading-tight text-primary mb-4">Date Lab</h2>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed opacity-80">Curation of intentional moments. Design your next memory through curated experiences meant for connection.</p>
+</div>
+</section>
+<!-- Category Filters -->
+<section class="mb-12 overflow-x-auto">
+<div class="flex gap-3 pb-2">
+<button class="px-8 py-2.5 rounded-full bg-primary text-on-primary font-semibold text-sm transition-all hover:shadow-md">All</button>
+<button class="px-8 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant font-medium text-sm hover:bg-surface-container-high transition-all">Home</button>
+<button class="px-8 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant font-medium text-sm hover:bg-surface-container-high transition-all">Outdoor</button>
+<button class="px-8 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant font-medium text-sm hover:bg-surface-container-high transition-all">Budget</button>
+<button class="px-8 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant font-medium text-sm hover:bg-surface-container-high transition-all">Luxury</button>
+</div>
+</section>
+<!-- Date Ideas Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
+<!-- Item 1 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] rounded-[2rem] overflow-hidden mb-6 bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Two people sitting on a picnic blanket in a field of wild flowers during sunset with golden lens flare" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdY_qFPYIsjf1UEm6k86XkG-IS71he0VFO6mVUM4YbldFSEQbS9hbgTNKkYkj1PSch5Ul2GJQW6zYzJCa4z6QI3YJG6XD2yngDSeGdOWn8SQ-K1FAFbN6cls54RKt49gyEh6Hz3qjDkyBDxRv-wDCCVupXrv8ZiPyO0AsJZHENcgdsZ0BlidzYoYGd3-XFz_rThXRlvNVxEvavxqW17acWceFLY3Jp_bveKqH_KfvkdzAdaghwL-TvaupQnVepj8x5XO9Ca2Ui-Ldb"/>
+<div class="absolute top-6 right-6">
+<span class="bg-surface-container-lowest/80 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-bold text-primary uppercase tracking-widest leading-none">Outdoor</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-1 group-hover:text-primary transition-colors">Golden Hour Picnic</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[1rem]" data-icon="schedule">schedule</span> 2-3 Hours
+                        </p>
+</div>
+<span class="font-headline font-bold text-primary text-lg">$25</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] rounded-[2rem] overflow-hidden mb-6 bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close up of two hands kneading pasta dough on a rustic wooden table with scattered flour and warm interior light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKPP9L_9IDxkLbWarGOfw7yXnomOZlmbIFFoKTSSgW8hVc7vSS6xicyy1HgIu6Hay9nkPjJ444ss5fp6MPxG0jzQlcuvBQq7YSHVU0ps-qJkHxpUu6oQCZfQ0ZES0TTw_rqaKkOZayZZPvI6kKrC9t1HMfEbQ3XYIm5yOpI2zT097eQdiQq1VdBO-HiiFK48V5GQzQGxx4gH-18dLL6Y0TfLhWAKiM7JB_fddyhH-k3SiAcRiqFrAXge6zuDpCWOxma_Ir9oSOxWU1"/>
+<div class="absolute top-6 right-6">
+<span class="bg-surface-container-lowest/80 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-bold text-primary uppercase tracking-widest leading-none">Home</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-1 group-hover:text-primary transition-colors">Artisanal Pasta Night</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[1rem]" data-icon="schedule">schedule</span> 4 Hours
+                        </p>
+</div>
+<span class="font-headline font-bold text-primary text-lg">$40</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] rounded-[2rem] overflow-hidden mb-6 bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Starlit night sky over a quiet lake with a wooden pier and two silhouettes sitting at the edge" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaRvWtYsYFA2ewaTlZxj9-5Iz6bdPcYCq9b0QSZ4IU6tp82-Gm0HeOoavJJs6v8PH2HPiy6vZaLxI1zusLrbeabHNZ3c39zEXYl_06aguR8gcuC_9atJjsSMpkSjnsNH1etSJjYi4--T1axM6kKupGQ4kTPqHpKyLk-CGyHkgxlz2YQmezxZ2fikYvlOjjKmCnWh-PihAR0YAmcunAx72FNai6fbnE7SJWYmczC4Q6QkebnJdvkXstJ-BwN_Pj6XuhyfeMF1A17-vt"/>
+<div class="absolute top-6 right-6">
+<span class="bg-surface-container-lowest/80 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-bold text-primary uppercase tracking-widest leading-none">Budget</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-1 group-hover:text-primary transition-colors">Stargazing &amp; S'mores</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[1rem]" data-icon="schedule">schedule</span> Late Night
+                        </p>
+</div>
+<span class="font-headline font-bold text-primary text-lg">Free</span>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] rounded-[2rem] overflow-hidden mb-6 bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A cozy candlelit jazz club with vintage instruments and a mood of sophisticated evening elegance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxCr6Mm7AE-59cBMTcsB50rKDTxYqCVevCG_MjvjrFmhDQ1i36gAjtYU8lZjdUwCZiBX6v-TdeGgDaGDTxcw4vv_zQKqo6PUJOg7pptjsi5-qAhpsUICqzlsTXYzsW0kgqMqF5XrjQaCaShcYOO8_UnxJm8xqWro_kmIcsMzbEIhT5fGZaMmc6nDVzF_UuoWFjuC6_ugkdO29JeKbSBN5PNWKGk6n_8YJakA4e3f_U3fuarXdbOlYDJ3wgQ4Nrq9J1J90nNFF4tN0M"/>
+<div class="absolute top-6 right-6">
+<span class="bg-surface-container-lowest/80 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-bold text-primary uppercase tracking-widest leading-none">Luxury</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-1 group-hover:text-primary transition-colors">Midnight Jazz Lounge</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[1rem]" data-icon="schedule">schedule</span> 3 Hours
+                        </p>
+</div>
+<span class="font-headline font-bold text-primary text-lg">$120</span>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] rounded-[2rem] overflow-hidden mb-6 bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Sunlit ceramic studio with finished pottery pieces on shelves and a potter's wheel in the center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrdmS82D2CKdAAW420_-awmkzWTaB7GRIjkbROOZU6IX3_hHu3cG2disVONDewPiMflPY6QWwc1m_yy0p-l_5pEoH0d-W5MS7OdYTGrc2jKZErRMioNTdqSDdfq3zxTgZ_ObPpZgG6uti12Wu4f9FzdKObwtUeJBcQPbHUvSlp1RB_h7AHVs5LH-aEu0CNVoGZESSOR4U13rU3eXPCLJKnIV-bsHNPvlpm5aTD9aaSnBTMrgJQcXYXSqjFol6y9Z4tzXk1KOaPhoAu"/>
+<div class="absolute top-6 right-6">
+<span class="bg-surface-container-lowest/80 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-bold text-primary uppercase tracking-widest leading-none">Creative</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-1 group-hover:text-primary transition-colors">Pottery Wheel Session</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[1rem]" data-icon="schedule">schedule</span> 2 Hours
+                        </p>
+</div>
+<span class="font-headline font-bold text-primary text-lg">$65</span>
+</div>
+</div>
+<!-- Item 6 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] rounded-[2rem] overflow-hidden mb-6 bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Dense evergreen forest with morning mist rolling through the trees and a narrow dirt path" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt17Aw-ahWUba4cMQqdfTqy2h227HlH3ioAcrcyevsh3lplOIoh7H2WzS7WJX12dGaWtPlfQO9H-VtEQDUiO1jwOT9zH9AXRtiFbsAsTzg1YOSkUbv3_UWCr1cYsAKBaHx1I1E2QcCFjfLEIz7Gzy0zXtQglYKPb3f_o403oRBIOS6CuAJUrYrrpXn1y8PA7xfYFvbsmxaPtsyZ9jYFwjdcvQoD4Vf2Xb3_PTjvEnZiH5mIiCsZqEw7KmzJRh6Is6AZQA3EaaENAdF"/>
+<div class="absolute top-6 right-6">
+<span class="bg-surface-container-lowest/80 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-bold text-primary uppercase tracking-widest leading-none">Outdoor</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-1 group-hover:text-primary transition-colors">Sunrise Forest Hike</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[1rem]" data-icon="schedule">schedule</span> 5 Hours
+                        </p>
+</div>
+<span class="font-headline font-bold text-primary text-lg">Free</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-8 pb-8 pt-4 bg-[#ffffff]/60 dark:bg-[#1a1c1a]/60 backdrop-blur-xl border-t border-[#2b3530]/10 dark:border-white/10 shadow-[0_-4px_40px_rgba(43,53,48,0.04)] rounded-t-[2rem] z-50 md:hidden">
+<a class="flex flex-col items-center justify-center text-[#2b3530]/60 dark:text-white/40 px-6 py-2 transition-all active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="dashboard">dashboard</span>
+<span class="font-['Manrope'] text-[0.75rem] font-medium tracking-wide">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#cbe9db] dark:bg-[#4a655a] text-[#2b3530] dark:text-white rounded-full px-6 py-2 transition-all active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="calendar_today" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span class="font-['Manrope'] text-[0.75rem] font-medium tracking-wide">Dates</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#2b3530]/60 dark:text-white/40 px-6 py-2 transition-all active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="auto_stories">auto_stories</span>
+<span class="font-['Manrope'] text-[0.75rem] font-medium tracking-wide">Journal</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#2b3530]/60 dark:text-white/40 px-6 py-2 transition-all active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
+<span class="font-['Manrope'] text-[0.75rem] font-medium tracking-wide">Settings</span>
+</a>
+</nav>
+</body></html>
